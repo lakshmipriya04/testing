@@ -1,0 +1,21 @@
+.intro{
+padding: 70px 100px 100px 100px;
+    color: black;
+    font-weight:300;
+}
+.tpad
+{
+    padding-top: 20px;
+}
+.bar a{
+    color:hotpink;
+    font-weight:300;
+}
+.bar a:hover
+{
+    color:black;
+    background-color:skyblue;
+}
+.bar a:active{
+           color: darkviolet;
+       }
