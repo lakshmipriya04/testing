@@ -5,13 +5,13 @@
 padding: 70px 100px 100px 100px;
     color: black;
     font-weight:300;
+    background-color:#c4c5da;
 }
 .carousel-inner > .item > img{
     position: absolute;
     top:50 px;
     left:0;
     min-width: 100%;
-    height: auto;
 }
 .carousel-inner > .item
 {
@@ -22,7 +22,7 @@ padding: 70px 100px 100px 100px;
     padding-top: 20px;
 }
 .bar a{
-    color:hotpink;
+    color:white;
     font-weight:300;
 }
 .bar a:hover
