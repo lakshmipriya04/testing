@@ -1,7 +1,21 @@
+.carousel-caption
+{ z-index:10;
+}
 .intro{
 padding: 70px 100px 100px 100px;
     color: black;
     font-weight:300;
+}
+.carousel-inner > .item > img{
+    position: absolute;
+    top:50 px;
+    left:0;
+    min-width: 100%;
+    height: auto;
+}
+.carousel-inner > .item
+{
+    height: 500px;
 }
 .tpad
 {
@@ -19,3 +33,10 @@ padding: 70px 100px 100px 100px;
 .bar a:active{
            color: darkviolet;
        }
+@media(min-width: 768px)
+{
+    .carousel-inner > .item
+{
+    height: 700px;
+}
+}
