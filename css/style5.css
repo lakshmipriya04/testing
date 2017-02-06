@@ -8,7 +8,12 @@
 
 
 body  {
-	background-color:rebeccapurple;
+	background-image: url(../img/girllap.jpg);
+    
+}
+.im
+{
+    border-radius:50%;
 }
 .education
 {
@@ -318,7 +323,7 @@ body  {
 
 .progress-bar { background-color: #222; }
 .cc > .progress-bar {
-    background-color: #f63a0f;
+    background-color: #e2ccff;
     width:88%; 
     -moz-animation:ten 2s ease-out;
     -webkit-animation:ten 2s ease-out;
@@ -328,7 +333,7 @@ body  {
 
 .cplus > .progress-bar {
   width: 90%;
-  background-color: #f27011;
+  background-color: #cc99ff;
     -moz-animation:twenty 2s ease-out;
     -webkit-animation:twenty 2s ease-out;
 }
@@ -337,7 +342,7 @@ body  {
 
 .java > .progress-bar {
   width: 85%;
-  background-color: #f2b01e;
+  background-color:#b366ff ;
     -moz-animation:thirty 2s ease-out;
     -webkit-animation:thirty 2s ease-out;
 }
@@ -346,7 +351,7 @@ body  {
 
 .html > .progress-bar {
   width: 97%;
-  background-color: #f2d31b;
+  background-color: #a241ff;
     -moz-animation:fourty 2s ease-out;
     -webkit-animation:fourty 2s ease-out;
 }
@@ -355,7 +360,7 @@ body  {
 
 .css > .progress-bar {
   width: 90%;
-  background-color: #86e01e;
+  background-color: #8e1aff ;
     -moz-animation:fifty 2s ease-out;
     -webkit-animation:fifty 2s ease-out;
 }
