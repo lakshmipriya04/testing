@@ -9,7 +9,6 @@
         <link rel="shortcut icon" href="../favicon.ico">
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
@@ -40,25 +39,25 @@
         <br>
             <form class="form-horizontal tpad" role="form">
                 <div class="form-group">
-                    <label for="email" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
+                    <label for="email" class="col-lg-6 control-label">Email</label>
+                    <div class="col-lg-6">
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
-                </div>
+                </div><br>
                 <div class="form-group tpad">
-                    <label for="message" class="col-lg-2 control-label">Message</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="6" id="message" placeholder="Message..."></textarea>
+                    <label for="message" class="col-lg-6 control-label">Message</label>
+                    <div class="col-lg-6">
+                        <textarea class="form-control" rows="4" id="message" placeholder="Message..."></textarea>
                     </div>
-                </div>
+                </div><br>
                 <div class="form-group tpad">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <a data-toggle="modal" href="#myModal" class="btn btn-default btn-lg">Send</a>
+                    <div class="col-lg-offset-2 col-lg-6">
+                        <a data-toggle="modal" href="#myModal"><input type="image" src=".//img/send-button(1).png" name="saveForm" class="btTxt submit" id="saveForm" /></a>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -73,9 +72,9 @@
                 </div>
             </div>
     
-    </div>
-          <div class="col-md-8"><h1><p><br>
-          Download my Resume here &rsaquo;&rsaquo; <a href=".//doc/currentresume.pdf"><input type="image" src=".//img/downloading-file.png" name="saveForm" class="btTxt submit" id="saveForm" /></a></p></h1>
+    </div> -->
+          <div class="col-md-8" align="center"><h2><p>
+          Download my Resume here &rsaquo;&rsaquo; <a href=".//doc/currentresume.pdf"><input type="image" src=".//img/downloading-file.png" name="saveForm" class="btTxt submit" id="saveForm" /></a></p></h2>
           </div></div></div>
 <!-- /container -->
 	</body>

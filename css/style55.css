@@ -32,6 +32,10 @@ body  {
 .container {
 	padding: 80px;
 }
+.form-control
+{
+    width: 500px;
+}
 
 .bt-menu {
 	position: fixed;
