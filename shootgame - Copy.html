@@ -1,37 +1,37 @@
 <html>
-<head>
-<title>shooter game</title>
-<style>
-#hero
-{
-background-image: url(img/superheroe1.png);
-width: 70px;
-height: 70px;
-background-repeat: no-repeat;
-position:absolute; 
+    <head>
+        <title>shooter game</title>
+        <style>
+            #hero
+            {
+                background-image: url(img/superheroe1.png);
+                width: 70px;
+                height: 70px;
+                background-repeat: no-repeat;
+                position:absolute;
+            }
+            #background {
+  background-image: url(img/spacebgg.png);
+  width: 600px;
+  height: 590px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
-#background {
-background-image: url(img/spacebgg.png);
-width: 600px;
-height: 590px;
-background-repeat: no-repeat;
-position: absolute;
-left: 0px;
-top: 0px;
-}
-#laser{
-background-image: url(img/Laser%20Beam-52.png);
-height: 50px;
-width: 50px;
-background-repeat: no-repeat;
-position: absolute;
-}
-.enemy {
-background-image: url(img/beast-icon.png);
-width: 100px;
-height: 100px;
-background-repeat: no-repeat;
-position: absolute;
+            #laser{
+                background-image: url(img/Laser%20Beam-52.png);
+               height: 2px;
+                width: 50px;
+                background-repeat: no-repeat;
+                position: absolute;
+            }
+            .enemy {
+  background-image: url(img/ufo.png);
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-repeat: no-repeat;             
 }
 #score {
   color: #ffffff;
@@ -48,15 +48,15 @@ position: absolute;
   top: 200px;
   visibility: hidden;
 }
-</style>
-</head>
-<body>
-<div id="background"></div>
-<div id="hero"></div>
-<div id="laser"></div>
-<div id="score"></div>
-    <div id="gameover"><b><h1>GAME OVER!</h1></b></div>
-<script>
+        </style>
+    </head>
+    <body>
+    <div id="background"></div>
+    <div id="hero"></div>
+    <div id="laser"></div>
+    <div id="score"></div>
+    <div id="gameover">GAME OVER</div>
+    <script>
         
         var LEFT_KEY = 37;
         var UP_KEY = 38;
@@ -65,14 +65,15 @@ position: absolute;
         var HERO_MOVEMENT = 4;
         var SPACE_KEY = 32;
         
-        var lastLoopRun = 0;
-        var score = 0; 
+        var score = 0;
         var iterations = 0;
-    
+        var lastLoopRun = 0;
+        
+        
         var controller = new Object();
         var enemies = new Array();
         
-function createSprite(element, x, y, w, h) {
+        function createSprite(element, x, y, w, h) {
   var result = new Object();
   result.element = element;
   result.x = x;
@@ -82,7 +83,7 @@ function createSprite(element, x, y, w, h) {
   return result;
 }
         
-function toggleKey(keyCode, isPressed) {
+        function toggleKey(keyCode, isPressed) {
             if (keyCode == LEFT_KEY)
                 {
                     controller.left = isPressed;
@@ -104,13 +105,14 @@ function toggleKey(keyCode, isPressed) {
                     controller.space=isPressed;
                 }
             
-}
-    
-function intersects(a, b) {
+        }
+        
+        function intersects(a, b) {
   return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
 }
+
         
-function ensureBounds(sprite,ignoreY ){
+        function ensureBounds(sprite,ignoreY){
             if(sprite.x < 20)
                 {
                    sprite.x = 20; 
@@ -127,15 +129,14 @@ function ensureBounds(sprite,ignoreY ){
                 {
                     sprite.y= 540 - sprite.h;
                 }
-}
+        }
         
-function setPosition(sprite) {
+        function setPosition(sprite) {
             var e = document.getElementById(sprite.element);
             e.style.left=sprite.x + 'px';
             e.style.top = sprite.y + 'px';
-}
-    
-function handlecontrols()
+        }
+        function handlecontrols()
         {
             if(controller.up)
                 {
@@ -153,14 +154,14 @@ function handlecontrols()
                 {
                     hero.x += HERO_MOVEMENT;
                 }
-            if (controller.space && laser.y<= -120) {
+            if (controller.space && laser.y <= -120) {
     laser.x = hero.x + 9;
     laser.y = hero.y - laser.h;
-         }
+  }
             ensureBounds(hero);
-}
-    
-function checkCollisions() {
+        }
+        
+        function checkCollisions() {
   for (var i = 0; i < enemies.length; i++) {
     if (intersects(laser, enemies[i])) {
       var element = document.getElementById(enemies[i].element);
@@ -169,12 +170,10 @@ function checkCollisions() {
       enemies.splice(i, 1);
       i--;
       laser.y = -laser.h;
-      score += 10;
-    } 
-      else if (intersects(hero, enemies[i])) {
+      score += 100;
+    } else if (intersects(hero, enemies[i])) {
       gameOver();
-    } 
-      else if (enemies[i].y + enemies[i].h >= 500){
+    } else if (enemies[i].y + enemies[i].h >= 500) {
       var element = document.getElementById(enemies[i].element);
       element.style.visibility = 'hidden';
       element.parentNode.removeChild(element);
@@ -190,18 +189,19 @@ function gameOver() {
   element = document.getElementById('gameover');
   element.style.visibility = 'visible';
 }
+
         
-function showSprites() {
+        function showSprites() {
             setPosition(hero);
             setPosition(laser);
- for (var i = 0; i < enemies.length; i++) {
+            for (var i = 0; i < enemies.length; i++) {
     setPosition(enemies[i]);
   }
-    var scoreElement = document.getElementById('score');
+  var scoreElement = document.getElementById('score');
   scoreElement.innerHTML = 'SCORE: ' + score;
 }
-    
-function updatePositions() {
+        
+        function updatePositions() {
   for (var i = 0; i < enemies.length; i++) {
     enemies[i].y += 4;
     enemies[i].x += getRandom(7) - 3;
@@ -209,7 +209,7 @@ function updatePositions() {
   }
   laser.y -= 12;
 }
-       
+        
 function addEnemy() {
   var interval = 50;
   if (iterations > 1500) {
@@ -219,8 +219,8 @@ function addEnemy() {
   } else if (iterations > 500) {
     interval = 35;
   }
-  
-  if (getRandom(interval) == 0) {
+    
+    if (getRandom(interval) == 0) {
     var elementName = 'enemy' + getRandom(10000000);
     var enemy = createSprite(elementName, getRandom(450), -40, 35, 35);
     
@@ -231,38 +231,40 @@ function addEnemy() {
     
     enemies[enemies.length] = enemy;
   }
-}
-    
-function getRandom(maxSize) {
-return parseInt(Math.random() * maxSize);
+  }
+        
+    function getRandom(maxSize) {
+  return parseInt(Math.random() * maxSize);
 }
 
-function loop() {
+        
+        function loop() {
             if (new Date().getTime() - lastLoopRun > 40)
                 {
-                    updatePositions();
+                    updatepositions();
                     handlecontrols();
                     checkCollisions();
-                    addEnemy();
                     showSprites();
+                    addEnemy();
                     lastLoopRun = new Date().getTime();
                     iterations++;
                 }
             setTimeout('loop();',2);
-}
+        }
         
-document.onkeydown = function(evt) {
+        document.onkeydown = function(evt) {
             toggleKey(evt.keyCode, true);
-};
+        };
         
-document.onkeyup = function(evt){
+        document.onkeyup = function(evt){
             toggleKey(evt.keyCode, false);
-};
+        };
         
-var hero = createSprite('hero',250,520,20,20);
-var laser = createSprite('laser',0,-120,2,50);
+        var hero = createSprite('hero',250,520,20,20);
+       var laser = createSprite('laser',0,-120,2,50);
         
-loop();
-</script>
-</body>
+    
+        loop();
+        </script>
+    </body>
 </html>
